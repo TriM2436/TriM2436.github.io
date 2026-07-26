@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="TriM portfolio - animator, visual illustrator, and content creator."><title>TriM | Portfolio</title><style>
+:root{--bg:#07111f;--bg2:#0b1730;--panel:rgba(12,20,40,.58);--line:rgba(255,255,255,.12);--text:#eef5ff;--muted:#aab7cf;--accent:#7ef0c6;--accent2:#7db7ff;--accent3:#b68cff;--shadow:0 22px 70px rgba(0,0,0,.35);--radius:26px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 20% 15%,rgba(126,240,198,.16),transparent 24%),radial-gradient(circle at 78% 12%,rgba(125,183,255,.17),transparent 28%),radial-gradient(circle at 55% 84%,rgba(182,140,255,.13),transparent 28%),linear-gradient(135deg,var(--bg),var(--bg2));overflow-x:hidden}
+.bg,.noise,.stars{position:fixed;inset:0;pointer-events:none;z-index:-2}
+.bg::before,.bg::after{content:"";position:absolute;border-radius:50%;filter:blur(34px);opacity:.33;animation:drift 18s ease-in-out infinite alternate}
+.bg::before{width:58vw;height:58vw;left:-10vw;top:-12vw;background:radial-gradient(circle,rgba(126,240,198,.95),rgba(126,240,198,0) 65%)}
+.bg::after{width:52vw;height:52vw;right:-12vw;bottom:-10vw;background:radial-gradient(circle,rgba(125,183,255,.88),rgba(125,183,255,0) 65%);animation-delay:-7s}
+.noise{z-index:-1;opacity:.11;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:58px 58px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.95),transparent 88%)}
+.stars span{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(255,255,255,.95);box-shadow:0 0 14px rgba(255,255,255,.55);animation:twinkle 5s linear infinite}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(4vw,5vh,0) scale(1.08)}}
+@keyframes twinkle{0%,100%{opacity:.18;transform:scale(1)}50%{opacity:1;transform:scale(1.8)}}
+@keyframes blink{50%{opacity:0}}
+.container{width:min(1120px,calc(100% - 28px));margin:0 auto;padding:18px 0 56px}
+.nav{position:sticky;top:12px;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;margin-bottom:20px;border:1px solid var(--line);border-radius:999px;background:rgba(7,17,31,.55);backdrop-filter:blur(18px);box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none;font-weight:800;letter-spacing:.2px}
+.badge{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(126,240,198,.24),rgba(125,183,255,.24));border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.navlinks{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px}.navlinks a{color:var(--muted);text-decoration:none;font-size:.95rem;padding:8px 12px;border-radius:999px;transition:transform .25s ease,background .25s ease,color .25s ease}.navlinks a:hover{color:var(--text);background:rgba(255,255,255,.08);transform:translateY(-1px)}
+.glass{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));backdrop-filter:blur(18px);border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:stretch;margin-top:18px}.hero-main{padding:34px;position:relative;overflow:hidden}.hero-main::before{content:"";position:absolute;inset:-2px;background:radial-gradient(circle at top right,rgba(126,240,198,.18),transparent 28%),radial-gradient(circle at bottom left,rgba(125,183,255,.14),transparent 30%);pointer-events:none}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}.chip{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);color:var(--text);text-decoration:none;background:rgba(255,255,255,.04);font-size:.94rem;transition:transform .25s ease,background .25s ease}.chip:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
+.title{font-size:clamp(3rem,8vw,5.7rem);line-height:.95;margin:0;letter-spacing:-.05em}.title span{background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.typing{min-height:1.4em;font-size:clamp(1.05rem,2.4vw,1.25rem);color:var(--muted);margin:18px 0 0}.cursor{display:inline-block;width:10px;height:1.2em;border-right:2px solid var(--accent);transform:translateY(4px);margin-left:4px;animation:blink .8s step-end infinite}
+.hero-text{max-width:60ch;margin:20px 0 0;color:#d8e3f7;line-height:1.8;font-size:1.02rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:16px;text-decoration:none;font-weight:800;color:var(--text);background:rgba(255,255,255,.08);border:1px solid transparent;transition:transform .25s ease,background .25s ease}.btn.primary{background:linear-gradient(135deg,rgba(126,240,198,.96),rgba(125,183,255,.96));color:#07111f;box-shadow:0 14px 30px rgba(126,240,198,.15)}.btn:hover{transform:translateY(-2px) scale(1.01)}
+.side{display:grid;gap:16px}.profile,.mini,.section{padding:22px;position:relative;overflow:hidden}.profile{display:flex;flex-direction:column;align-items:center;text-align:center}.avatar{width:120px;height:120px;border-radius:28px;margin-bottom:16px;display:grid;place-items:center;font-size:3rem;background:linear-gradient(135deg,rgba(126,240,198,.16),rgba(125,183,255,.16));border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}.profile h2,.section h2{margin:0 0 10px;font-size:1.5rem}.muted{color:var(--muted)}.stats{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.stat{padding:14px 12px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}.stat strong{display:block;font-size:1.08rem;margin-bottom:4px}
+section{margin-top:22px}.section{padding:28px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:18px;flex-wrap:wrap}.grid2,.grid3{display:grid;gap:16px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.card{padding:18px;border-radius:20px;background:var(--panel);border:1px solid rgba(255,255,255,.08)}.card h3{margin:0 0 10px;font-size:1.12rem}.card p{margin:0;color:var(--muted);line-height:1.75}
+.skills{display:grid;gap:14px}.skill .row{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;font-size:.95rem}.bar{height:10px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.08)}.bar span{display:block;height:100%;width:var(--w);border-radius:inherit;background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 0 18px rgba(126,240,198,.25)}.level{display:inline-flex;align-items:center;justify-content:center;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:#dfe7f6;font-size:.78rem}
+.project{min-height:190px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;padding:20px}.tag{display:inline-flex;width:fit-content;padding:6px 10px;border-radius:999px;font-size:.82rem;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#dce7f7}.meta{display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:.92rem}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.linkcard{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-radius:18px;text-decoration:none;color:var(--text);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);transition:transform .25s ease,background .25s ease}.linkcard:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
+.footer{margin-top:22px;text-align:center;color:var(--muted);font-size:.95rem;padding:18px 12px 6px}.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:translateY(0)}
+@media (max-width:920px){.hero{grid-template-columns:1fr}.grid2,.grid3,.links{grid-template-columns:1fr}.nav{border-radius:24px}}
+@media (max-width:640px){.container{width:min(100% - 18px,1120px);padding-top:12px}.nav{padding:12px 14px;gap:10px}.brand span:last-child{display:none}.hero-main,.section{padding:22px}.profile{padding:18px}.title{font-size:clamp(2.6rem,14vw,4rem)}.cta,.badges{gap:10px}.btn,.chip{width:100%;justify-content:center}.stats{grid-template-columns:1fr}}
+</style></head>
+<body>
+<div class="bg"></div><div class="noise"></div><div class="stars" id="stars"></div>
+<div class="container">
+<nav class="nav glass"><a class="brand" href="#top"><div class="badge">🌿</div><span>TriM</span><span class="muted">Portfolio</span></a><div class="navlinks"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#links">Links</a></div></nav>
+<main id="top" class="hero">
+<section class="hero-main glass reveal">
+<div class="badges"><a class="chip" href="#projects">🚀 Featured work</a><a class="chip" href="#links">🔗 Social links</a><a class="chip" href="#about">🎨 Visual storytelling</a></div>
+<h1 class="title"><span id="typed"></span></h1>
+<p class="typing">Animator • Visual Illustrator • Content Creator <span class="cursor"></span></p>
+<p class="hero-text">I build clean, meaningful visuals for stories, communities, and digital dawah. My focus is simple: create art that feels modern, international, and easy to remember.</p>
+<div class="cta"><a class="btn primary" href="#projects">View Projects</a><a class="btn" href="#links">Contact Me</a></div>
+</section>
+<aside class="side">
+<div class="profile glass reveal"><div class="avatar">✦</div><h2>TriM</h2><p class="muted">Branding for animation, illustration, and meaningful digital content.</p><div class="stats"><div class="stat"><strong>EN</strong><span class="muted">International</span></div><div class="stat"><strong>24/7</strong><span class="muted">Creative mode</span></div><div class="stat"><strong>IRL</strong><span class="muted">Student</span></div></div></div>
+<div class="mini glass reveal"><h3 style="margin:0 0 10px;">Now building</h3><p class="muted" style="margin:0; line-height:1.75;">A personal portfolio that can grow with you: Discord bio, artwork showcase, project hub, and future client page.</p></div>
+</aside>
+</main>
+
+<section id="about" class="section glass reveal">
+<div class="section-head"><div><h2>About Me</h2><p class="muted">A short intro with a professional, international tone.</p></div></div>
+<div class="grid2">
+<div class="card"><h3>Creative direction</h3><p>I enjoy turning ideas into visuals that feel warm, clear, and meaningful. My work leans toward clean composition, soft motion, and storytelling that carries a message.</p></div>
+<div class="card"><h3>What I aim for</h3><p>To build a memorable personal brand that works everywhere: Discord, social media, client profiles, and future portfolio pages.</p></div>
+</div>
+</section>
+
+<section id="skills" class="section glass reveal">
+<div class="section-head"><div><h2>Skills</h2><p class="muted">A simple visual snapshot of what you do best.</p></div></div>
+<div class="skills">
+<div class="skill"><div class="row"><span>Animation</span><span class="level">Beginner+</span></div><div class="bar"><span style="--w:55%"></span></div></div>
+<div class="skill"><div class="row"><span>Visual Illustration</span><span class="level">Intermediate</span></div><div class="bar"><span style="--w:75%"></span></div></div>
+<div class="skill"><div class="row"><span>Storytelling</span><span class="level">Intermediate</span></div><div class="bar"><span style="--w:70%"></span></div></div>
+<div class="skill"><div class="row"><span>Programming</span><span class="level">Intermediate-</span></div><div class="bar"><span style="--w:62%"></span></div></div>
+<div class="skill"><div class="row"><span>Godot / Game Dev</span><span class="level">Beginner+</span></div><div class="bar"><span style="--w:45%"></span></div></div>
+<div class="skill"><div class="row"><span>English</span><span class="level">Intermediate</span></div><div class="bar"><span style="--w:65%"></span></div></div>
+</div>
+</section>
+
+<section id="projects" class="section glass reveal">
+<div class="section-head"><div><h2>Featured Projects</h2><p class="muted">Original work and things currently in progress.</p></div></div>
+<div class="grid3">
+<article class="card project"><span class="tag">Animation</span><div><h3>Original Animation</h3><p>Meaningful animation experiments and short-form visual storytelling built from original ideas.</p></div><div class="meta"><span>In Progress</span><span>Motion Design</span></div></article>
+<article class="card project"><span class="tag">Game Development</span><div><h3>Godot Game Project</h3><p>An indie game prototype made with Godot, focused on learning mechanics, scenes, and UI flow.</p></div><div class="meta"><span>Prototype</span><span>Godot</span></div></article>
+<article class="card project"><span class="tag">Programming</span><div><h3>Emeraude Discord Bot</h3><p>A Discord bot project with utility commands, RPG ideas, and room to grow into a community tool.</p></div><div class="meta"><span>Development</span><span>Discord</span></div></article>
+<article class="card project"><span class="tag">Illustration</span><div><h3>Visual Illustration</h3><p>Original character art, fanart practice, and stylized visuals that support the TriM identity.</p></div><div class="meta"><span>Growing</span><span>Art</span></div></article>
+<article class="card project"><span class="tag">Writing</span><div><h3>Story Concepts</h3><p>Story ideas and dialogue practice for future animations, clips, and educational visual content.</p></div><div class="meta"><span>Drafts</span><span>Concepts</span></div></article>
+<article class="card project"><span class="tag">Portfolio</span><div><h3>TriM Website</h3><p>This website itself is part of the portfolio: a live example of design, structure, and branding.</p></div><div class="meta"><span>Live</span><span>GitHub Pages</span></div></article>
+</div>
+</section>
+
+<section id="links" class="section glass reveal">
+<div class="section-head"><div><h2>Links</h2><p class="muted">Official links to my creative platforms.</p></div></div>
+<div class="links">
+<a class="linkcard" href="https://youtube.com/@trimanimation983?si=YafeH_93AVBJO2FV" target="_blank" rel="noreferrer"><span>YouTube</span><span>↗</span></a>
+<a class="linkcard" href="https://www.instagram.com/trim_anim?igsh=MWVqNGR1ZHg4ajBvdA==" target="_blank" rel="noreferrer"><span>Instagram</span><span>↗</span></a>
+<a class="linkcard" href="https://www.facebook.com/share/1LHA1pxA4V/" target="_blank" rel="noreferrer"><span>Facebook</span><span>↗</span></a>
+<a class="linkcard" href="https://x.com/TriM2436" target="_blank" rel="noreferrer"><span>X / Twitter</span><span>↗</span></a>
+<a class="linkcard" href="https://bsky.app/profile/trimanim.bsky.social" target="_blank" rel="noreferrer"><span>Bluesky</span><span>↗</span></a>
+<a class="linkcard" href="https://ko-fi.com/trimsecondary" target="_blank" rel="noreferrer"><span>Ko-fi</span><span>↗</span></a>
+<a class="linkcard" href="https://www.deviantart.com/trim2436" target="_blank" rel="noreferrer"><span>DeviantArt</span><span>↗</span></a>
+</div>
+</section>
+
+<div class="footer"><p>Created by TriM • Clean visuals, meaningful stories, global reach.</p></div>
+</div>
+<script>
+const words=["Hi, I'm TriM","Animator","Visual Illustrator","Content Creator"],typed=document.getElementById("typed");let wi=0,ci=0,deleting=false;
+function typeLoop(){const current=words[wi];if(!deleting){ci++;typed.textContent=current.slice(0,ci);if(ci===current.length){deleting=true;setTimeout(typeLoop,1100);return;}}else{ci--;typed.textContent=current.slice(0,ci);if(ci===0){deleting=false;wi=(wi+1)%words.length;}}setTimeout(typeLoop,deleting?55:85)}
+const stars=document.getElementById("stars");function buildStars(){const total=window.innerWidth<700?42:80;stars.innerHTML="";for(let i=0;i<total;i++){const s=document.createElement("span"),size=Math.random()*2.4+.8;s.style.width=size+"px";s.style.height=size+"px";s.style.left=(Math.random()*100)+"vw";s.style.top=(Math.random()*100)+"vh";s.style.animationDelay=(Math.random()*5)+"s";s.style.opacity=(Math.random()*0.9+.1).toFixed(2);stars.appendChild(s)}}
+const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("show")})},{threshold:.14});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+buildStars();typeLoop();window.addEventListener("resize",buildStars);
+</script></body></html>
